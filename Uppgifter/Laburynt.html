@@ -1,0 +1,53 @@
+<script src="https://spelprogrammering.nu/simple.js">
+    function crashed(){
+        return (getPixel(mouse.x, mouse.y).red != 0)
+    }
+    
+    
+    function start(){
+        rectangle(100,100,1000,1000, "blue");
+       //Hinder
+        rectangle(100,280,250,600, "red");
+        rectangle(100,100,1001,100, "red");
+        rectangle(670,600,180,150, "red");
+        rectangle(450,700,300,150, "red");
+        rectangle(450,700,400,150, "red");
+        rectangle(150,400,400,150, "red");
+        rectangle(600,400,400,150, "red");
+        rectangle(800,150,150,150, "red");
+        rectangle(100,1060,1000,40, "red");
+        rectangle(1100,100,10,1000, "red");
+       //vinst
+       rectangle(140,950,100,100, "green")
+        //Text
+        text(100,260,80, "start", "black");
+        text(100,1000,100, "Mål", "black");
+    
+    }
+    //när man failar
+    function crashedblue(){
+        return (getPixel(mouse.x, mouse.y).blue != 0)
+    }
+    function hasWon(){
+        return (getPixel(mouse.x, mouse.y).green != 0)
+    }
+    function update(){
+    if (crashedblue()){
+        hideMouse();
+     }else {
+         showMouse();
+     }
+        if (crashed()){
+            rectangle(mouse.x, mouse.y, mouse.size, mouse.size, "red");
+        alert("FAIL, BÖRJA OM");
+        stopUpdate();
+   }
+   if (hasWon()){
+            rectangle(mouse.x, mouse.y, mouse.size, mouse.size, "green");
+        alert("DU VANN DITT FAN");
+        stopUpdate();
+    }
+}
+
+
+</script>

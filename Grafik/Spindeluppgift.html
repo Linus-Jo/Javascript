@@ -1,0 +1,57 @@
+<script src="https://spelprogrammering.nu/simple.js">
+    //här så skapar jag en funktion som är själva spindeln
+    function Spindel(startX,startY,Xspeed,Yspeed){
+        this.x = startX;
+        this.y = startY;
+        //Här så  gör jag så att spindlarna åker åt olika håll i webläsaren.
+        if(random(10)==0){
+        this.Xspeed = Xspeed;
+        }else {
+         this.Xspeed = -Xspeed;
+        }
+        if(random(10)==0){
+            this.Yspeed = Yspeed;
+        }else {
+            this.Yspeed = -Yspeed;
+        }
+        this.update = function(){
+            //här gör jag så att spindlarna försvinner när dem åker utanför skärmen.
+            if(this.x > 0 && this.x  < totalWidth && this.y > 0 && this.y < totalHeight ){
+            this.x += this.Xspeed;
+            this.y += this.Yspeed;
+           //här så ritar jag hur spindeln ska se ut i webbläsaren. 
+            save();
+           translate(this.x,this.y);           
+           circle(0,0,20,"black")
+           circle(-7,1,5,"white")
+           circle(7,1,5,"white")
+           circle(-7,1,2,"red")
+           circle(7,1,2,"red")
+           restore();
+            }
+        }
+    }
+    
+    function start(){
+        updateInterval = 0;
+        //Här så deklarerar jag en spindlar array.
+        spindlar =[];
+     //Här pushar jag in spindlarna in i Spindlar arrayen.
+        for(i=0;i<100;i++) {
+            spindlar.push(new Spindel(totalWidth/2,totalHeight/2,(1+2*random(100)/-100), (1+2*random(100)/-100)));
+        }
+    }
+     
+    function update(){
+        clearScreen();
+       updateInterval++;
+       //Här så skriver den ut spindlarna i webbläsaren.
+        for(let i=0;i<spindlar.length;i++) {
+            spindlar[i].update();
+            }
+            //här så blir det ett intevall mellan när dem ska spawna.
+            if(updateInterval%100==0){
+                spindlar.push(new Spindel(totalWidth/2,totalHeight/2,(1+2*random(100)/-100), (1+2*random(100)/-100)));
+        }
+}
+</script>

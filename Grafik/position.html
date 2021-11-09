@@ -1,0 +1,21 @@
+<script src="https://spelprogrammering.nu/simple.js">
+    function start(){
+       //translate() flyttar på 0,0 i kordinatssytemet
+       //rotate() roterar kordinatsystemet
+       //scale() minskar eller ökar skalningen på kordinatssystemet
+       //save() och restore() sprarar kordinatssystemets inställningar resp återställs. 
+
+       circle(0,0,50,"red");
+       save();
+       translate(200,200);
+       circle(0,0,50,"blue");
+       restore();
+       save();
+       translate(300,100);
+       rotate(90);
+       scale(2.0,0.5);
+       rectangle(0,0,200,100,"green");
+       restore();
+       triangle(100,100,200,100,200,150, "yellow");
+    }
+</script>

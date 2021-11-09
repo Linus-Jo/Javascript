@@ -1,0 +1,16 @@
+<script src="https://spelprogrammering.nu/simple.js">
+    function start(){
+         ball={x:400, y:200, storlek:60}
+         fyrhorning={x:1000, y:250,bredd:100,längd:350}
+         cirkel={x:700, y:800, storlek:70}
+    }
+        function update(){
+        clearScreen();
+         circle(ball.x,ball.y,ball.storlek,"red");
+         rectangle(fyrhorning.x,fyrhorning.y,fyrhorning.längd, fyrhorning.bredd, "black");
+         circle(cirkel.x,cirkel.y,cirkel.storlek, "yellow");
+         if(keyboard.a){fyrhorning.x-=3;}
+          if(keyboard.d){cirkel.y+=5;}
+          if(keyboard.w){ball.x+=5;}
+    }
+</script>

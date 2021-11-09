@@ -1,0 +1,75 @@
+<script src="https://spelprogrammering.nu/simple.js">
+    function hasCrashed(){
+
+ return (getPixel(cycle.x, cycle.y).green != 0)
+
+ }
+ 
+ function start(){
+
+ //Objektet cycle innehåller egenskaper hos strecket som rör på sig.
+
+ cycle = {x: 20, y: 250, xSpeed: 1, ySpeed: 0, score: 0, size: 5};
+
+
+
+ //Raderna nedan ritar up spelfältet.
+
+ line(0, 0, totalWidth, 0, 10, "green");
+
+ line(0, 0, 0, totalHeight, 10, "green");
+
+ line(0, totalHeight, totalWidth, totalHeight, 10, "green");
+
+ line(totalWidth, 0, totalWidth, totalHeight, 10, "green");
+
+ line(0, 100, totalWidth, 100, 5, "green");
+
+ }
+
+
+
+ function update(){
+
+ //Ritar up strecket som rör på sig
+ rectangle(cycle.x, cycle.y, cycle.size, cycle.size, "green");
+
+
+
+ //Uppdaterar score.
+
+ cycle.score++;
+
+
+ //Nollställer ritytan för score och ritar upp score.
+
+ rectangle(10, 10, totalWidth-20, 80, "white");
+
+ text(20, 75, 70, "TRON | Score: "+cycle.score, "red");
+
+ //Styr strecket som rör sig.
+
+ if (keyboard.left) { cycle.xSpeed = -1; cycle.ySpeed = 0; }
+ if (keyboard.right) { cycle.xSpeed = 1; cycle.ySpeed = 0; }
+ if (keyboard.up) { cycle.ySpeed = -1; cycle.xSpeed = 0; }
+ if (keyboard.down) { cycle.ySpeed = 1; cycle.xSpeed = 0; }
+
+ //Uppdaterar streckets nuvarande position baserat på piltangenterna för forsatt utritning i nästa update.
+ cycle.x += cycle.xSpeed*cycle.size;
+
+ cycle.y += cycle.ySpeed*cycle.size;
+
+ //Kontroll om nuvarande pixel positionen är blå eller inte för att avsluta spelet vid krock med blått.
+
+ if (hasCrashed(cycle)){
+
+ rectangle(cycle.x, cycle.y, cycle.size, cycle.size, "red");
+
+ alert("FAIL, BÖRJA OM");
+
+ stopUpdate();
+
+     }
+
+ }
+</script>

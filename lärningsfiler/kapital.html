@@ -1,0 +1,12 @@
+<script>
+   let kapital = Number (prompt("Vad är ditt start kapital?"));
+   let procent1,procent2,procent3,procent4 
+   procent1 = Number (prompt("hur stort är den procentuella förändringen år 1?"));
+   procent2 = Number (prompt("hur stort är den procentuella förändringen år 2?"));
+   procent3 = Number (prompt("hur stort är den procentuella förändringen år 3?"));
+   procent4 = Number (prompt("hur stort är den procentuella förändringen år 4?"));
+
+kapital=kapital*(1+procent1/100)*(1+procent2/100)*(1+procent3/100)*(1+procent4/100)
+
+alert("Ditt kapital efter fyra långa fruktansvärda år är"+kapital.toFixed(2));
+</script>

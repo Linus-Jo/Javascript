@@ -1,0 +1,56 @@
+<script src="https://spelprogrammering.nu/simple.js">
+    function start(){
+       /*
+        //bakgrund
+       rectangle(1,500,5000,-500,"dodgerblue");
+       //Huskroppen
+        rectangle(250,400,250,100,"red");
+        //Hustaket 1
+       rectangle(220,380,300,25,"black");
+        //Hustaket 2
+        rectangle(245,360,250,25,"black");
+         //Hustaket 3
+       rectangle(269,350,200,25,"black");
+        //gräs, mark
+        rectangle(1,500,10000,10000,"green");
+        //sol
+        circle(50,100,100, "yellow");
+       //husgrund
+       rectangle(250,490,250,15, "lightgray");
+        //Dörr
+       rectangle(395,410,40,90,"brown");
+      //dörrhantag
+       circle(430,445,5, "gray")
+      //husfönster första lager
+      rectangle(260,420,100,50,"white")
+      //husfönster andra lager
+      rectangle(267,425,85,40,"violet")
+   */
+  /*
+        storlek = 200;
+        circle(100,100,storlek, "green");
+        circle(600,400,storlek, "red");
+        circle(300,250,storlek, "black");
+        circle(900,150,storlek, "violet");
+ */
+/*
+         circle(650,400,360, "red");
+         circle(650,400,320, "orange");
+         circle(650,400,305, "yellow");
+         circle(650,400,290, "green");
+         circle(650,400,270, "blue");
+         circle(650,400,250, "violet");
+         circle(650,400,200, "white");
+         rectangle(1,400,2000,2000,"green");
+*/
+    let antal = Math.floor(Math.random()*10000)+1;
+    for(i=0;i<antal;i++){
+        let r = Math.floor(Math.random()*255)+0;
+        let g = Math.floor(Math.random()*255)+0;
+        let b = Math.floor(Math.random()*255)+0;
+        let cirkel= {x:random(2000), y:random(2000),storlek:random(50),farg:mixColor(r,g,b)}
+        circle(cirkel.x,cirkel.y,cirkel.storlek,cirkel.farg);
+       
+    }
+    }
+        </script>
