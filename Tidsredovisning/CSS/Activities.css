@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    width: 400px;
+    border: 6px solid green;
+    padding: 50px;
+    margin: 20px;
+    
+}
+
+body {
+    background-color: cadetblue;
+}
+
+h2 {
+    background-color: bisque;
+}

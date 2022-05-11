@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="sticky_nav">
+        <div class="container_left">
+          <a href="#">
+            <i class="fa fa-home"></i>
+          </a>
+          <button id="btnMenu" onclick="openMenu()">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+        <div class="container_menu" id="thisMenu">
+          <div class="container_list">
+            <button class="btnList" onclick="openList('1')">
+              <span class="drop">Dropdown 1</span>
+              <span class="acc">Accordion 1</span>
+            </button>
+            <div class="content_list left" id="thisList_1">
+              <p>1<br>Lorem ipsum<br>Lorem ipsum<br>Lorem ipsum</p>
+            </div>
+          </div>
+          <div class="container_list">
+            <button class="btnList" onclick="openList('2')">
+              <span class="drop">Dropdown 2</span>
+              <span class="acc">Accordion 2</span>
+            </button>
+            <div class="content_list left" id="thisList_2">
+              <p>2<br>Lorem ipsum<br>Lorem ipsum<br>Lorem ipsum</p>
+            </div>
+          </div>
+          <div class="container_list">
+            <button class="btnList" onclick="openList('3')">
+              <span class="drop">Dropdown 3</span>
+              <span class="acc">Accordion 3</span>
+            </button>
+            <div class="content_list center" id="thisList_3">
+              <p>3<br>Lorem ipsum<br>Lorem ipsum<br>Lorem ipsum</p>
+            </div>
+          </div>
+          <div class="container_list">
+            <button class="btnList" onclick="openList('4')">
+              <span class="drop">Dropdown 4</span>
+              <span class="acc">Accordion 4</span>
+            </button>
+            <div class="content_list right" id="thisList_4">
+              <p>4<br>Lorem ipsum<br>Lorem ipsum<br>Lorem ipsum</p>
+            </div>
+          </div>
+          <div class="container_list">
+            <button class="btnList" onclick="openList('5')">
+              <span class="drop">Dropdown 5</span>
+              <span class="acc">Accordion 5</span>
+            </button>
+            <div class="content_list right" id="thisList_5">
+              <p>5<br>Lorem ipsum<br>Lorem ipsum<br>Lorem ipsum</p>
+            </div>
+          </div>
+        </div>
+        <div class="container_right">
+          <div class="content_search" id="thisSearch">
+            <form><input type="text" placeholder="Search..."></form>
+          </div>
+          <button id="btnSearch" onclick="openSearch()">
+            <i class="fa fa-search"></i>
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+      </nav>
+     <style>
+      #sticky_nav {
+        top: -45px;
+        position: fixed;
+        z-index: 999;
+        transition: all .5s ease
+      }
+      
+      .btnList { width: 120px }
+      
+      .content_list {
+        background: #fff;
+        width: 250px;
+        top: 45px
+      }
+      
+      .content_list.left, .content_list.left:before { left: 0 }
+      
+      .content_list.center { left: -65px }
+      
+      .content_list.center:before {
+        left: 50%;
+        transform: translate(-50%, 0)
+      }
+      
+      .content_list.right, .content_list.right:before { right: 0 }
+      
+      .content_list:before {
+        width: 8px;
+        top: -8px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #fff
+      }
+      
+      .container_right { float: right }
+      
+      .content_search {
+        top: 0;
+        right: 40px
+      }
+      
+      input[type=text] {
+        background: #fff;
+        font-size: 22px;
+        border-radius: 5px
+      }
+      
+      input[type=text]:focus { outline: none }
+      
+      [class*="show"] {
+      display:block
+      }
+      
+      .show_list {
+        padding: 20px 0;
+        animation: height 1s ease
+      }
+      
+      @keyframes 
+      height { from {
+      padding:0;
+      opacity:0
+      }
+      
+      to {
+        padding: 20px 0;
+        opacity: 1
+      }
+      }
+      
+      .show_search form {
+        width: 150px;
+        padding: 6px;
+        animation: width 1s ease
+      }
+      
+      @keyframes 
+      width { from {
+      width:0;
+      opacity:0
+      }
+      
+      to {
+        width: 150px;
+        opacity: 1
+      }
+      }
+      
+      .visible { display: inline-block }
+      
+      .hidden { display: none }
+      
+      @media (max-width:683px) {
+      
+      #btnMenu { display: block }
+      
+      .container_menu { display: none }
+      
+      .container_list { width: 100% }
+      
+      .btnList {
+        width: 100%;
+        box-shadow: 0 2px 2px -2px #333
+      }
+      
+      .drop { display: none }
+      
+      .acc { display: inline-block }
+      
+      .content_list {
+        width: 100%;
+        top: 0;
+        position: relative;
+        float: left
+      }
+      
+      .content_list.left, .content_list.center, .content_list.right {
+        left: 0;
+        right: 0
+      }
+      
+      .content_list.left:before, .content_list.center:before, .content_list.right:before {
+        left: 50%;
+        transform: translate(-50%, 0)
+      }
+      
+      .show_menu {
+        background: #1a1a1a;
+        width: 100%;
+        top: 45px;
+        display: block;
+        position: absolute
+      }
+      }
+</style>
+
+ <script>
+ window.onscroll = function(){
+    scrollFunction()
+ }
+ function scrollFunction(){
+    var sn = document.getElementById("sticky_nav");
+       if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+          sn.style.top = "0"
+       }
+       else{
+          sn.style.top = "-45px"
+       }
+ }
+ 
+ function openList(x){
+    var cL = document.getElementsByClassName("content_list");
+    var i;
+       for(i = 0; i < cL.length; i++){
+          var OcL = cL[i];
+             if(cL[i] != document.getElementById("thisList_" + x)){
+                OcL.classList.remove("show_list")
+             }
+       }
+    document.getElementById("thisList_" + x).classList.toggle("show_list")
+ }
+ 
+ function openSearch(){
+    if(document.getElementById("btnSearch")){
+       document.getElementById("thisSearch").classList.toggle("show_search");
+       document.getElementById("btnSearch").getElementsByTagName("i")[0].classList.toggle("hidden");
+       document.getElementById("btnSearch").getElementsByTagName("i")[1].classList.toggle("visible")
+    }
+ }
+ 
+ function openMenu(){
+    if(document.getElementById("btnMenu")){
+       document.getElementById("thisMenu").classList.toggle("show_menu");
+       document.getElementById("btnMenu").getElementsByTagName("i")[0].classList.toggle("hidden");
+       document.getElementById("btnMenu").getElementsByTagName("i")[1].classList.toggle("visible")
+    }
+ }
+</script>
+</body>
+</html>

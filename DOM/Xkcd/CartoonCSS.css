@@ -1,0 +1,52 @@
+html{
+    background-color: rgb(118, 184, 238);
+}
+
+header {
+    width: 75%;
+    border: 15px solid lightcoral;
+    padding: 50px;
+     margin: 15px auto;
+     text-align: center;
+     background-color: rgb(255, 255, 255);
+     max-width: 500px;
+}
+
+main{
+    width: 75%;
+    border: 15px solid lightcoral;
+    background-color: rgb(255, 255, 255);
+  margin: 15px auto;
+  text-align: center;
+  max-width: 500px;
+}
+footer{
+    width: 75%;
+  border: 15px solid lightcoral;
+  padding: 50px;
+  margin: 15px auto;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  max-width: 500px;
+}
+
+
+img{
+  width: 100%;
+}
+
+ul {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ padding-left: 0;
+}
+
+li{
+  display:inline-block;
+  width: 10%;
+  border: 10px solid lightcoral;
+  padding: 10px;
+  margin: 5px auto;
+  background-color: gainsboro;
+}

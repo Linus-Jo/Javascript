@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Tasks.css">
+    <script src="../JS/gettasklist.js"></script>
+    <script src="../JS/editTask.js"></script>
+    <script src="../JS/load.js"></script>
+
+    <title>Tasks</title>
+</head>
+    <body>
+        </head>
+    <body>
+        
+        <div class="topnav" id="myTopnav">
+          <a href="../Sidor/index.html" class="active">Huvudsida</a>
+          <a href="../Sidor/Compilation.html">Compilation</a>
+          <a href="../Sidor/Activities.html">Activities</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        
+        <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+    <h1>Tasks</h1>
+    <table id="tasklist">
+        <tr>
+            <th>Activity</th>
+            <th>Datum</th>
+            <th>Anteckningar</th>
+            <th>Time</th>
+            
+        </tr>
+        
+        <tbody id="tasks">
+
+        </tbody>
+    </table>
+    <form id="date">
+      <input id="fromDate" type="date">
+      <input id="toDate" type="date">
+      <button id="dateGet" type="button">Datum</button>
+      <button id="pageGet" type="button">Sidor</button>
+  </form>
+  <form>
+      <fieldset id="fieldset">
+          <legend id="taskformlegend">Ny Uppgift</legend>
+          <label for="activityinput">Kategori:</label>
+          <select name="activityinput" id="activityinput"></select><br>
+          <label for="dateinput">Datum:</label>
+          <input type="date" name="dateinput" id="dateinput"><br>
+          <label for="timeinput">Tid:</label>
+          <input type="time" name="timeinput" id="timeinput"><br>
+          <label for="commentinput">Anteckning:</label>
+          <input name="commentinput" id="commentinput"><br>
+          <button id="sendTask" type="button" onclick="saveTask()">Spara</button>
+      </fieldset>
+  </form>
+    <ul id="sidnav">
+    </ul>
+        <h2>Skapa task</h2>
+        <h2>Radera Task</h2>
+        <h2>Redigera task</h2>
+        <h2>Välj datum att sortera efter</h2>
+        <h2>Spara task</h2>
+</body>
+</html>
